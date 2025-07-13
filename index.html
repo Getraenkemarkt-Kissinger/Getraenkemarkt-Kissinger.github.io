@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getränke Schmidt Bad Kissingen - Bierwissen & Sortiment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Professional Color Palette with High Contrast */
+            --primary-black: #1a1a1a;
+            --primary-white: #ffffff;
+            --accent-green: #2d5530;
+            --accent-light-green: #4a7c59;
+            --accent-amber: #d4a574;
+            --accent-gold: #f0e6d2;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #666666;
+            --bg-cream: #fefefe;
+            --bg-light-gray: #f8f9fa;
+            --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            --border-light: #e0e0e0;
+            
+            /* High-contrast colors for better readability */
+            --card-bg-primary: #ffffff;
+            --card-bg-secondary: #f8f9fa;
+            --card-bg-accent: #e8f4e8;
+            --card-bg-highlight: #f0f8f0;
+            --card-text-primary: #1a1a1a;
+            --card-text-secondary: #4a4a4a;
+            --card-text-white: #ffffff;
+            
+            /* Shadows & Effects */
+            --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.16);
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s ease;
+            --transition-fast: all 0.15s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            color: var(--text-dark);
+            font-weight: 400;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(45, 85, 48, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(74, 124, 89, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Clean Header Styling - Modern Market Look */
+        .header-main {
+            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-light-green) 100%);
+            color: var(--primary-white);
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+
+        .header-main::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .business-logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+        
+        .header-main h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .header-main .subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin: 0 0 24px 0;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Modern Card Design - Enhanced for Readability */
+        .card {
+            background: var(--primary-white);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-subtle);
+            border: 2px solid var(--border-light);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-4px);
+            border-color: var(--accent-green);
+        }
+        
+        .card h2 {
+            color: var(--primary-black);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border-light);
+            position: relative;
+        }
+        
+        .card h2::before {
+            content: '📚';
+            font-size: 2rem;
+            margin-right: 12px;
+        }
+
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-light-green));
+            border-radius: 1px;
+        }
+        
+        /* Modern Table Design */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            background: var(--primary-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            border: 1px solid var(--border-light);
+        }
+        
+        .comparison-table th {
+            background: var(--accent-green);
+            color: var(--primary-white);
+            padding: 24px 20px;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--card-bg-secondary);
+        }
+        
+        .comparison-table tr:hover {
+            background-color: var(--card-bg-highlight);
+        }
+        
+        /* Navigation */
+        .sticky-nav {
+            background: var(--primary-white);
+            box-shadow: var(--shadow-subtle);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-black);
+            background-color: var(--bg-cream);
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .lang-btn {
+            background: var(--bg-light-gray);
+            color: var(--text-dark);
+            border: 1px solid var(--border-light);
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: var(--primary-white);
+        }
+        
+        /* Student-friendly additions */
+        .card h2::before {
+            content: '📚';
+            font-size: 2rem;
+            margin-right: 12px;
+        }
+
+        /* Student-friendly section styling */
+        .student-section {
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%);
+            border: 2px solid var(--accent-green);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .student-tip {
+            background: var(--card-bg-highlight);
+            border-left: 4px solid var(--accent-green);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .student-tip::before {
+            content: '💡';
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        /* Image containers for educational content */
+        .educational-image {
+            text-align: center;
+            margin: 32px auto;
+            padding: 20px;
+            background: var(--card-bg-secondary);
+            border-radius: var(--radius-md);
+            border: 2px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+        }
+
+        .educational-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .educational-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .educational-image .caption {
+            margin-top: 12px;
+            font-style: italic;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Market-style pricing and product info */
+        .product-info {
+            background: var(--card-bg-highlight);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            margin: 16px 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .price-tag {
+            background: var(--accent-green);
+            color: var(--primary-white);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 8px 8px 8px 0;
+        }
+
+        /* Make the layout more market-like */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .market-card {
+            background: var(--primary-white);
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .market-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .market-card h4 {
+            color: var(--accent-green);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        /* Animations */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Footer Styling */
+        .footer {
+            background: var(--accent-green);
+            color: var(--primary-white);
+            text-align: center;
+            padding: 40px 24px;
+            margin-top: 60px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .footer p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .source-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .source-info strong {
+            display: block;
+            margin: 16px 0 8px 0;
+            font-size: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container { padding: 16px; }
+            .header-main { padding: 40px 24px; }
+            .header-main h1 { font-size: 2.2rem; }
+            .header-badges { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 12px; 
+            }
+            .badge { 
+                padding: 10px 16px; 
+                font-size: 0.8rem; 
+            }
+            .business-logo { font-size: 3rem; }
+            .card { padding: 24px; }
+            .card h2 { font-size: 1.8rem; }
+            .card h2::before { font-size: 1.8rem; }
+            .sticky-nav { padding: 16px 0; }
+            .nav-links { 
+                gap: 16px; 
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links a { 
+                font-size: 0.9rem; 
+                padding: 10px 16px;
+            }
+            .lang-btn { 
+                font-size: 0.8rem; 
+                padding: 8px 16px;
+            }
+            .market-grid { 
+                grid-template-columns: 1fr; 
+                gap: 16px;
+            }
+            .market-card h4 { font-size: 1.1rem; }
+            .price-tag { font-size: 0.8rem; padding: 3px 10px; }
+            .educational-image { padding: 16px; }
+            .educational-image img { max-width: 100%; }
+            .student-tip { padding: 12px; font-size: 0.9rem; }
+            .student-section { padding: 16px; }
+            .product-info { padding: 12px; font-size: 0.9rem; }
+        }
+        
+        @media (min-width: 769px) {
+            .sticky-nav {
+                flex-direction: row;
+                justify-content: space-between;
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            .language-switcher {
+                margin-top: 0;
+            }
+            .market-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple, Clean Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-links">
+            <a href="#biergattungen">Biergattungen</a>
+            <a href="#bierarten">Bierarten</a>
+            <a href="#biersorten">Biersorten</a>
+            <a href="#biermarken">Biermarken</a>
+        </div>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="de">D</button>
+            <button class="lang-btn" data-lang="de_simple">DS</button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container">
+        <div id="intro-bk" class="header-main">
+            <div class="business-logo">🏪</div>
+            <h1>Getränkemarkt Kissinger</h1>
+            <p class="subtitle">Ihr Getränkemarkt in Bad Kissingen</p>
+            <div class="header-badges">
+                <span class="badge">📚 Bierwissen</span>
+                <span class="badge">🚚 Lieferservice</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 1: Biergattungen -->
+    <div class="container">
+        <div id="biergattungen" class="card">
+            <h2>Biergattungen</h2>
+            <p class="text-center mb-6" style="color: var(--text-medium); font-size: 1.1rem;">Die Biergattung ist gesetzlich festgelegt und wird durch den Stammwürzegehalt (Stärke des Bieres) bestimmt. Hauptsächlich getrunken wird Vollbier, in geringem Maße auch Schankbier und Starkbier.</p>
+            
+            <h3 style="color: var(--accent-green); margin-bottom: 16px;">Tabelle Biergattungen nach der Bierverordnung</h3>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table" style="width: 100%; min-width: 600px;">
+                    <thead>
+                        <tr>
+                            <th>Bezeichnung der Biergattung</th>
+                            <th>zulässige Stammwürzebereiche</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">Bier mit niedrigem Stammwürzegehalt</td>
+                            <td>weniger als 7 % Stammwürze</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Schankbier</td>
+                            <td>mind. 7,0, aber weniger als 11 % Stammwürze</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Vollbier</td>
+                            <td>mind. 11,0, aber weniger als 16 % Stammwürze</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Starkbier</td>
+                            <td>mind. 16,0 % Stammwürze</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Student Tip Box -->
+            <div class="student-tip">
+                <strong>Tipp:</strong> Starkbier wird für besondere Anlässe getrunken.
+            </div>
+        </div>
+
+        <!-- SECTION 2: Bierarten -->
+        <div id="bierarten" class="card">
+            <h2>Bierarten</h2>
+            <p class="text-center mb-6" style="color: var(--text-medium); font-size: 1.1rem;">Die Bierart wird durch die Art der Vergärung bestimmt.</p>
+            
+            <div class="market-grid">
+                <!-- UNTERGÄRIG -->
+                <div class="market-card" style="border: 3px solid var(--text-medium);">
+                    <span class="emoji" style="font-size: 3rem; display: block; margin-bottom: 16px;">❄️</span>
+                    <h4 style="color: var(--text-dark);">UNTERGÄRIG</h4>
+                    <div class="product-info">
+                        <p style="font-weight: 600; margin-bottom: 8px;">🧊 Kalte Gärung: 4-9°C</p>
+                        <p style="font-size: 0.95rem; color: var(--text-medium); line-height: 1.5;">
+                            • Hefe setzt sich unten ab<br>
+                            • Ausgewogener Geschmack<br>
+                            • Länger haltbar
+                        </p>
+                        <div class="price-tag">Bestseller</div>
+                        <p style="font-size: 0.9rem; margin-top: 8px;">Pilsener, Märzen, Export</p>
+                    </div>
+                </div>
+                
+                <!-- OBERGÄRIG -->
+                <div class="market-card" style="border: 3px solid var(--accent-green);">
+                    <span class="emoji" style="font-size: 3rem; display: block; margin-bottom: 16px;">🌡️</span>
+                    <h4 style="color: var(--accent-green);">OBERGÄRIG</h4>
+                    <div class="product-info">
+                        <p style="font-weight: 600; margin-bottom: 8px;">🔥 Warme Gärung: 15-20°C</p>
+                        <p style="font-size: 0.95rem; color: var(--text-medium); line-height: 1.5;">
+                            • Hefe schwimmt oben<br>
+                            • Aromatischer Geschmack<br>
+                            • Geringere Haltbarkeit
+                        </p>
+                        <div class="price-tag">Beispiele im Sortiment</div>
+                        <p style="font-size: 0.9rem; margin-top: 8px;">Weißbier, Kölsch, Altbier</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Educational image for Bierarten -->
+            <div class="educational-image">
+                <img src="anna.png" alt="Bierarten Erklärung - Getränkemarkt Kissinger" />
+            </div>
+            
+            <div class="student-tip">
+                <strong>Tipp:</strong> Wieso hält länger. Anna ändert das. 
+            </div>
+        </div>
+
+        <!-- SECTION 3: Biersorten -->
+        <div id="biersorten" class="card">
+            <h2>Biersorten</h2>
+            <p class="text-center mb-6" style="color: var(--text-medium); font-size: 1.1rem;">Die verschiedenen Biersorten werden durch Geschmack, Farbe und Tradition definiert</p>
+            
+            <!-- Biersorten -->
+            <div class="subsection" style="margin-bottom: 48px;">
+                
+                <div class="student-tip">
+                    <strong>Tipp:</strong> Die Biersorten bezeichnen typische Eigenschaften oder weitere Unterteilungen, die sehr oft mit den Handelsbezeichnungen gleich sind. Aber nicht zu verwechseln mit den über 6000 Biermarken, die in Deutschland zu finden sind!
+                </div>
+
+                <!-- Educational image for Biersorten -->
+                <div class="educational-image">
+                    <img src="anna2.png" alt="Biersorten Sortiment - Getränkemarkt Kissinger" />
+                </div>
+                
+                <!-- Hauptkategorien der Biersorten -->
+                <div class="market-grid">
+                    <!-- OBERGÄRIGE BIERSORTEN -->
+                    <div class="market-card" style="border: 3px solid var(--accent-green);">
+                        <span class="emoji" style="font-size: 3rem; display: block; margin-bottom: 16px;">🌡️</span>
+                        <h4 style="color: var(--accent-green);">OBERGÄRIGE SORTEN</h4>
+                        <div class="product-info">
+                            <p style="font-weight: 600; margin-bottom: 8px;">🔥 Warme Gärung: 15-20°C</p>
+                        </div>
+                        
+                        <!-- Obergärige Sorten -->
+                        <h5 style="color: var(--accent-green); font-weight: 700; margin: 12px 0; font-size: 1.1rem;">Beliebte Sorten im Sortiment:</h5>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div class="product-info" style="text-align: left;">
+                                <h6 style="font-size: 1rem; margin-bottom: 4px; color: var(--accent-green); font-weight: 700;">🌾 WEISSBIER</h6>
+                                <p style="font-size: 0.9rem; color: var(--text-medium);">Fruchtig, trüb, mit Hefe</p>
+                                <span class="price-tag" style="font-size: 0.8rem;">ab 0,89€</span>
+                            </div>
+                            <div class="product-info" style="text-align: left;">
+                                <h6 style="font-size: 1rem; margin-bottom: 4px; color: var(--accent-green); font-weight: 700;">🍺 KÖLSCH</h6>
+                                <p style="font-size: 0.9rem; color: var(--text-medium);">Leicht, hell, aus Köln</p>
+                                <span class="price-tag" style="font-size: 0.8rem;">ab 0,95€</span>
+                            </div>
+                            <div class="product-info" style="text-align: left;">
+                                <h6 style="font-size: 1rem; margin-bottom: 4px; color: var(--accent-green); font-weight: 700;">🍻 ALTBIER</h6>
+                                <p style="font-size: 0.9rem; color: var(--text-medium);">Malzig, dunkel, aus Düsseldorf</p>
+                                <span class="price-tag" style="font-size: 0.8rem;">ab 1,10€</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- UNTERGÄRIGE BIERSORTEN -->
+                    <div class="market-card" style="border: 3px solid var(--text-medium);">
+                        <span class="emoji" style="font-size: 3rem; display: block; margin-bottom: 16px;">❄️</span>
+                        <h4 style="color: var(--text-dark);">UNTERGÄRIGE SORTEN</h4>
+                        <div class="product-info">
+                            <p style="font-weight: 600; margin-bottom: 8px;">🧊 Kalte Gärung: 4-9°C</p>
+                        </div>
+                        
+                        <!-- Untergärige Sorten -->
+                        <h5 style="color: var(--text-dark); font-weight: 700; margin: 12px 0; font-size: 1.1rem;">Bestseller im Sortiment:</h5>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div class="product-info" style="text-align: left;">
+                                <h6 style="font-size: 1rem; margin-bottom: 4px; color: var(--text-dark); font-weight: 700;">🍺 PILSENER</h6>
+                                <p style="font-size: 0.9rem; color: var(--text-medium);">Hopfig-bitter, golden</p>
+                                <span class="price-tag" style="font-size: 0.8rem;">ab 0,85€</span>
+                            </div>
+                            <div class="product-info" style="text-align: left;">
+                                <h6 style="font-size: 1rem; margin-bottom: 4px; color: var(--text-dark); font-weight: 700;">🍂 MÄRZEN</h6>
+                                <p style="font-size: 0.9rem; color: var(--text-medium);">Malzig, bernsteinfarben</p>
+                                <span class="price-tag" style="font-size: 0.8rem;">ab 0,92€</span>
+                            </div>
+                            <div class="product-info" style="text-align: left;">
+                                <h6 style="font-size: 1rem; margin-bottom: 4px; color: var(--text-dark); font-weight: 700;">⚫ SCHWARZBIER</h6>
+                                <p style="font-size: 0.9rem; color: var(--text-medium);">Dunkel, mild, süffig</p>
+                                <span class="price-tag" style="font-size: 0.8rem;">ab 1,05€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="student-tip">
+                    <strong>Tipp:</strong> Biersorten definieren sich durch Geschmack, Farbe und Tradition - nicht nur durch die Gärungsart. Eine Sorte kann von verschiedenen Brauereien als unterschiedliche Marken produziert werden.
+                </div>
+                
+                <!-- Professional Sales Tip -->
+                <div class="student-tip" style="background: linear-gradient(135deg, #fff8e1 0%, #f3e5ab 100%); border-left: 4px solid var(--accent-amber); margin-top: 24px;">
+                    <strong>💼 Verkaufsgespräch:</strong> Wenn man im Verkaufsgespräch dem Gast ein Bier empfiehlt, beschreibt man es und nennt dabei z.B. die Biergattung, die Bierart, die Bierfarbe und vielleicht besondere Merkmale zur Herkunft oder Entstehung.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECTION 4: Biermarken -->
+        <div id="biermarken" class="card">
+            <h2>Biermarken</h2>
+            <p class="text-center mb-6" style="color: var(--text-medium); font-size: 1.1rem;">In unserem Getränkemarkt führen wir über 200 verschiedene Biermarken</p>
+            
+            <!-- Biermarken -->
+            <div class="subsection" style="margin-bottom: 48px;">             
+                <div class="student-tip">
+                    <strong>Tipp:</strong> Eine Biermarke ist die Kombination aus Brauerei und Biersorte. Verschiedene Brauereien können die gleiche Sorte herstellen, aber jede hat ihre eigene Marke.
+                </div>
+                
+                <!-- Regionale Biermarken aus Bad Kissingen und Umgebung -->
+                <h4 style="color: var(--accent-green); font-size: 1.2rem; margin: 32px 0 16px 0; text-align: center;">🍺 Unsere regionalen Biermarken</h4>
+                <div class="market-grid" style="margin-bottom: 32px;">
+                    <div class="market-card" style="border: 2px solid var(--accent-green);">
+                        <h4 style="color: var(--accent-green);">🏭 Brauerei Martin</h4>
+                        <div class="product-info">
+                            <p><strong>Ort:</strong> Hausen (15 km von Bad Kissingen)</p>
+                            <p><strong>Bestseller:</strong> Martin Pils</p>
+                            <p><strong>Biersorte:</strong> Pilsener</p>
+                            <p><strong>Seit:</strong> 1885</p>
+                            <span class="price-tag">Kiste (20x0,5L): 18,90€</span>
+                        </div>
+                    </div>
+                    <div class="market-card" style="border: 2px solid var(--accent-green);">
+                        <h4 style="color: var(--accent-green);">🏭 Brauerei Strecks</h4>
+                        <div class="product-info">
+                            <p><strong>Ort:</strong> Mellrichstadt</p>
+                            <p><strong>Bestseller:</strong> Strecks Pilsner</p>
+                            <p><strong>Biersorte:</strong> Pilsener</p>
+                            <p><strong>Tradition:</strong> Fränkische Braukunst</p>
+                            <span class="price-tag">Kiste (20x0,5L): 19,50€</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Beispiel für Markenverständnis -->
+                <div class="student-section">
+                    <strong style="font-size: 1rem;">Beispiel für das Markenverständnis:</strong><br>
+                    <span style="font-size: 0.95rem; line-height: 1.5;">
+                        <strong>Martin Pils</strong> und <strong>Strecks Pilsner</strong> sind zwei verschiedene <strong>Biermarken</strong> der gleichen <strong>Biersorte</strong> (Pilsener). 
+                        Beide Brauereien stellen Pilsener her, aber jede hat ihren eigenen Geschmack und Charakter - deshalb unterschiedliche Preise!
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Getränkemarkt Kissinger – Ihr Getränkemarkt in Bad Kissingen</p>
+        <div class="source-info">
+            <strong>🏪 Getränkemarkt Kissinger</strong><br>
+            📍 Bad Kissingen<br>
+            📞 Lieferservice verfügbar<br><br>
+            
+            <strong>Quellen für das Bierwissen:</strong><br>
+            Deutscher Brauer-Bund e.V.<br>
+            Bierverordnung (BierV)<br>
+            Fränkische Brauereien und regionale Traditionen<br>
+            Bildmaterial: Getränkemarkt Kissinger
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('.sticky-nav').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Add fade-in animation to cards when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Add click sound effect (optional - can be enabled)
+            function playClickSound() {
+                // Simple beep sound using Web Audio API
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.1);
+            }
+
+            // Add interactive click effects to cards
+            document.querySelectorAll('.market-card').forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.add('pulse');
+                    setTimeout(() => {
+                        this.classList.remove('pulse');
+                    }, 600);
+                    // Uncomment the next line to enable click sounds
+                    // playClickSound();
+                });
+            });
+
+            // Progress indicator for reading
+            function updateReadingProgress() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                
+                let progressBar = document.getElementById('reading-progress');
+                if (!progressBar) {
+                    progressBar = document.createElement('div');
+                    progressBar.id = 'reading-progress';
+                    progressBar.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 4px;
+                        background: linear-gradient(90deg, var(--accent-green), var(--accent-light-green));
+                        z-index: 9999;
+                        transition: width 0.3s ease;
+                    `;
+                    document.body.appendChild(progressBar);
+                }
+                
+                progressBar.style.width = scrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateReadingProgress);
+
+            const translations = {
+                de: {
+                    mainTitle: "Getränke Schmidt Bad Kissingen",
+                    mainSubtitle: "Ihr Bierspezialist mit fundiertem Fachwissen",
+                    introText: "Willkommen bei Getränke Schmidt in Bad Kissingen - Ihrem Experten für exzellente Biere und Getränke. Entdecken Sie unser Sortiment und profitieren Sie von unserer langjährigen Erfahrung!",
+                    
+                    // Bierwissen Tour
+                    beerKnowledgeTourTitle: "🍺 Bierwissen Tour",
+                    beerKnowledgeSubtitle: "Alles was Sie über Bier wissen müssen - kompakt und verständlich erklärt",
+                    basicsTitle: "🍺 Bier Grundlagen",
+                    basicsSubtitle: "Bier besteht aus nur 4 Zutaten:",
+                    ingredient1Title: "Malz",
+                    ingredient1Text: "Getreide (meist Gerste, auch Weizen, Dinkel)",
+                    ingredient2Title: "Hopfen",
+                    ingredient2Text: "Gibt Geschmack, Bitterkeit und Haltbarkeit",
+                    ingredient3Title: "Wasser",
+                    ingredient3Text: "Basis für das Bier (über 90%)",
+                    ingredient4Title: "Hefe",
+                    ingredient4Text: "Verwandelt Zucker in Alkohol und CO₂",
+                    purityLaw: "Das Deutsche Reinheitsgebot von 1516 erlaubt nur diese 4 Zutaten!",
+                    
+                    // Biergattungen
+                    beerCategoriesTitle: "📊 Biergattungen nach Stammwürze",
+                    beerCategoriesSubtitle: "Gesetzlich festgelegt durch den Stammwürzegehalt:",
+                    niedrigTitle: "Bier mit niedrigem Stammwürzegehalt",
+                    niedrigText: "Weniger als 7% Stammwürze, Max. 0,5% Alkohol, Alkoholfreie Biere",
+                    schankbierTitle: "Schankbier",
+                    schankbierText: "Mind. 7% bis unter 11% Stammwürze, Leicht, hopfenbitter",
+                    vollbierTitle: "Vollbier",
+                    vollbierText: "Mind. 11% bis unter 16% Stammwürze, Märzen, Pils, Export",
+                    starkbierTitle: "Starkbier",
+                    starkbierText: "Mind. 16% Stammwürze, Bockbier, vollmundig",
+                    basicsTitle: "🍺 Bier Grundlagen",
+                    basicsSubtitle: "Bier besteht aus nur 4 Zutaten:",
+                    ingredient1Title: "Malz",
+                    ingredient1Text: "Getreide (meist Gerste)",
+                    ingredient2Title: "Hopfen",
+                    ingredient2Text: "Gibt Geschmack und Haltbarkeit",
+                    ingredient3Title: "Wasser",
+                    ingredient3Text: "Basis für das Bier",
+                    ingredient4Title: "Hefe",
+                    ingredient4Text: "Verwandelt Zucker in Alkohol",
+                    purityLaw: "Das Deutsche Reinheitsgebot von 1516 erlaubt nur diese 4 Zutaten!",
+                    beerTypesTitle: "🍻 Die 2 Bierarten",
+                    beerTypesSubtitle: "In Deutschland gibt es zwei Hauptkategorien:",
+                    obergaerigTitle: "OBERGÄRIG",
+                    obergaerigText: "Warme Gärung (15-20°C). Beispiel: Weißbier, Kölsch",
+                    untergaerigTitle: "UNTERGÄRIG",
+                    untergaerigText: "Kalte Gärung (4-9°C). Beispiel: Pils, Märzen",
+                    pilsTitle: "🍺 PILSENER",
+                    pilsText: "Hopfig-bitter, golden, untergärig",
+                    weissbierTitle: "🌾 WEISSBIER",
+                    weissbierText: "Fruchtig, trüb, obergärig",
+                    koelschTitle: "🍻 KÖLSCH",
+                    koelschText: "Leicht, hell, obergärig",
+                    maerzenTitle: "🍂 MÄRZEN",
+                    maerzenText: "Malzig, bernsteinfarben, untergärig",
+                    brewingTitle: "🍺 Wie wird Bier gebraut?",
+                    brewingSubtitle: "Der Brauprozess in 5 einfachen Schritten:",
+                    step1Title: "Maischen",
+                    step1Text: "Malz + Wasser = Zucker",
+                    step2Title: "Läutern",
+                    step2Text: "Zucker vom Malz trennen",
+                    step3Title: "Kochen",
+                    step3Text: "Hopfen dazu, würzen",
+                    step4Title: "Gären",
+                    step4Text: "Hefe macht Alkohol",
+                    step5Title: "Lagern",
+                    step5Text: "Bier reift & wird klar",
+                    brewingText: "Das Brauen dauert mehrere Wochen. Zuerst entsteht süße Würze, dann verwandelt Hefe den Zucker in Alkohol und CO₂.",
+                    
+                    // Professionelle Klassifikation (NEU)
+                    professionalClassificationTitle: "📚 Fachbegriffe verstehen",
+                    professionalClassificationSubtitle: "Die korrekte Verwendung der wichtigsten Bierbegriffe:",
+                    terminologyExample: "💡 Beispiel aus der Region:",
+                    terminologyExampleText: "Martin Pils und Strecks Pilsner sind zwei verschiedene Biermarken der gleichen Biersorte (Pilsener), beide gehören zur Bierart \"untergärig\" und zur Biergattung \"Vollbier\".",
+                    
+                    // Regionale Biermarken
+                    regionalBeersTitle: "Biermarken aus der Region",
+                    regionalBeersSubtitle: "Bad Kissingen und Umgebung haben eine reiche Biertradition:",
+                    
+                    cultureTitle: "🌍 Bierkultur in Deutschland",
+                    regionHeader: "Region",
+                    specialtyHeader: "Spezialität",
+                    factHeader: "Besonderheit",
+                    bavaria: "<strong>Bayern</strong>",
+                    bavariaSpecialty: "Weißbier, Märzen",
+                    bavariaFact: "Oktoberfest",
+                    cologne: "<strong>Köln</strong>",
+                    cologneSpecialty: "Kölsch",
+                    cologneFact: "0,2L Stange",
+                    north: "<strong>Norddeutschland</strong>",
+                    northSpecialty: "Pilsener",
+                    northFact: "Hopfenanbau",
+                    east: "<strong>Ostdeutschland</strong>",
+                    eastSpecialty: "Schwarzbier",
+                    eastFact: "Dunkles Malz",
+                    funFact: "Wusstest du?",
+                    funFactText: "Deutschland hat über 1.500 Brauereien und etwa 6.000 verschiedene Biermarken!",
+                    
+                    // Biermarken-Entstehung
+                    brandCreationTitle: "Wie entstehen 6.000 Biermarken?",
+                    brandExplanationTitle: "🏭 Biermarken-Formel:",
+                    brandExplanationText: "Eine Biermarke = <strong>Brauerei + Biersorte + Herkunft/Brauort + spezieller Name</strong>",
+                    practicalExample: "💡 Das Ergebnis:",
+                    practicalExampleText: "Obwohl beide Biere zur <strong>gleichen Sorte</strong> gehören (Vollbier Pilsener Typs), entstehen durch unterschiedliche Brauereinamen, Brauorte und Markenkennzeichnungen <strong>zwei eigenständige Biermarken</strong>. So wird aus einer Biersorte eine große Markenvielfalt!",
+                    
+                    // Einfache Klassifizierung
+                    simpleClassificationTitle: "Bier einfach erklärt",
+                    simpleClassificationSubtitle: "Bier unterscheidet man ganz einfach nach 4 Hauptkriterien:",
+                    grainTypeTitle: "Getreideart",
+                    grainTypeText: "Gerste, Weizen, Dinkel, etc.",
+                    colorTitle: "Farbe",
+                    colorText: "Hell, Dunkel, Schwarz, Bernstein",
+                    alcoholTitle: "Alkoholgehalt",
+                    alcoholText: "0,5% - 12% Alkohol",
+                    fermentationTitle: "Gärart",
+                    fermentationText: "Obergärig oder Untergärig",
+                    simpleClassificationTip: "💡 <strong>Merksatz:</strong> Diese 4 Kriterien helfen dabei, jedes Bier schnell einzuordnen und zu beschreiben!",
+                    
+                    // Schneller Bier-Guide für Profis
+                    quickGuideTitle: "Schneller Bier-Guide für die Gastronomie",
+                    shelfLifeTitle: "Haltbarkeit",
+                    shelfLifeText: "Flaschenbier: 6-12 Monate<br>Fassbier: 3-6 Monate<br>Geöffnet: Sofort verbrauchen",
+                    storageTitle: "Lagerung",
+                    storageText: "Kühl (6-8°C)<br>Dunkel<br>Aufrecht stehend<br>Keine Temperaturschwankungen",
+                    servingTitle: "Ausschank",
+                    servingText: "Pils: 6-8°C<br>Weißbier: 8-10°C<br>Richtiges Glas wählen<br>Schaumkrone 2-3 cm",
+                    professionalTip: "💡 <strong>Profi-Tipp:</strong> Das richtige Lagern und Ausschenken ist entscheidend für die Qualität! Temperatur und Sauberkeit sind die wichtigsten Faktoren.",
+                    
+                    // Schnelle Übersicht Tabelle
+                    quickReferenceTitle: "Schnelle Übersicht für Schüler",
+                    tableHeaderBeer: "Bierart",
+                    tableHeaderAlcohol: "Alkoholgehalt",
+                    tableHeaderTemp: "Serviertemperatur",
+                    tableHeaderTaste: "Geschmack",
+                    
+                    // Kunden & Events Sektion
+                    customersEventsTitle: "👥 Unsere Kunden & Events",
+                    customersEventsSubtitle: "Bad Kissingen ist vielfältig - und so sind auch unsere Kunden und die Anlässe, die wir beliefern:",
+                    customer1Title: "Klinik Bad Kissingen",
+                    customer1Text: "Große Cafeteria, viele Besucher täglich, Patientenfeste",
+                    customer2Title: "Bürokomplexe & Unternehmen",
+                    customer2Text: "Mittagspausen, Firmenfeiern, Geschäftstreffen",
+                    customer3Title: "Berufsschulen & Unis",
+                    customer3Text: "Studentenpartys, Abschlussfeiern, Campus-Events",
+                    customer4Title: "Hochzeiten & Familienfeiern",
+                    customer4Text: "Diverse Altersgruppen, besondere Anlässe, gehobene Ansprüche",
+                    customer5Title: "Sportvereine",
+                    customer5Text: "Nach dem Training, Vereinsfeste, Gesundheitsbewusste",
+                    customer6Title: "Stadtfeste & Märkte",
+                    customer6Text: "Familien mit Kindern, Touristen, lange Veranstaltungen",
+                    insightTitle: "💡 Unsere Beobachtungen:",
+                    insightText: "Bad Kissingen ist eine Kurstadt mit vielen verschiedenen Menschen. Manche bleiben nur kurz, andere wohnen hier. Manche achten sehr auf ihre Gesundheit, andere wollen einfach etwas Leckeres. Bei Veranstaltungen sind oft ganz unterschiedliche Altersgruppen zusammen.",
+                    
+                    responsibilityTitle: "⚠️ Verantwortungsvoller Verkauf",
+                    responsibilityText: "Als verantwortungsvoller Getränkehändler weisen wir darauf hin: Bier enthält Alkohol. Abgabe erst ab 16 Jahren. Alkohol sollte immer maßvoll genossen werden."
+                },
+                de_simple: {
+                    mainTitle: "Getränke Schmidt Bad Kissingen",
+                    mainSubtitle: "Wir verkaufen gute Getränke.",
+                    introText: "Hallo! Wir sind Getränke Schmidt in Bad Kissingen. Wir verkaufen viele gute Getränke. Besonders viele verschiedene Biere!",
+                    
+                    // Bierwissen Tour - Einfache Sprache
+                    beerKnowledgeTourTitle: "🍺 Bier lernen",
+                    beerKnowledgeSubtitle: "Alles über Bier - einfach und schnell erklärt",
+                    basicsTitle: "🍺 Was ist in Bier drin?",
+                    basicsSubtitle: "Bier hat nur 4 Sachen drin:",
+                    ingredient1Title: "Malz",
+                    ingredient1Text: "Das ist Getreide",
+                    ingredient2Title: "Hopfen",
+                    ingredient2Text: "Macht den Geschmack",
+                    ingredient3Title: "Wasser",
+                    ingredient3Text: "Das meiste im Bier",
+                    ingredient4Title: "Hefe",
+                    ingredient4Text: "Macht den Alkohol",
+                    purityLaw: "In Deutschland gibt es ein altes Gesetz: Nur diese 4 Sachen dürfen rein!",
+                    beerTypesTitle: "🍻 Die 2 Bierarten",
+                    beerTypesSubtitle: "Es gibt nur 2 große Gruppen:",
+                    obergaerigTitle: "WARM GEMACHT",
+                    obergaerigText: "Bei warmer Temperatur. Zum Beispiel: Weißbier",
+                    untergaerigTitle: "KALT GEMACHT",
+                    untergaerigText: "Bei kalter Temperatur. Zum Beispiel: Pils",
+                    pilsTitle: "🍺 PILS",
+                    pilsText: "Bitter, gelb",
+                    weissbierTitle: "🌾 WEISSBIER",
+                    weissbierText: "Fruchtig, trüb",
+                    koelschTitle: "🍻 KÖLSCH",
+                    koelschText: "Leicht, hell",
+                    maerzenTitle: "🍂 MÄRZEN",
+                    maerzenText: "Süßlich, braun",
+                    brewingTitle: "🍺 Wie macht man Bier?",
+                    brewingSubtitle: "Bier machen geht so:",
+                    step1Title: "Mixen",
+                    step1Text: "Malz + Wasser mischen",
+                    step2Title: "Trennen",
+                    step2Text: "Zucker rausholen",
+                    step3Title: "Kochen",
+                    step3Text: "Hopfen reintun",
+                    step4Title: "Gären",
+                    step4Text: "Hefe macht Alkohol",
+                    step5Title: "Warten",
+                    step5Text: "Bier wird fertig",
+                    brewingText: "Bier machen dauert lange. Erst wird alles süß, dann macht die Hefe Alkohol daraus.",
+                    
+                    // Professionelle Klassifikation - Einfache Sprache
+                    professionalClassificationTitle: "📚 Wichtige Wörter verstehen",
+                    professionalClassificationSubtitle: "Diese Wörter helfen, über Bier zu sprechen:",
+                    terminologyExample: "💡 Beispiel aus der Nähe:",
+                    terminologyExampleText: "Martin Pils und Strecks Pilsner sind zwei verschiedene Biermarken. Aber beide sind die gleiche Biersorte (Pilsener). Beide werden kalt gemacht und haben gleich viel Alkohol.",
+                    
+                    // Regionale Biermarken - Einfache Sprache
+                    regionalBeersTitle: "Biermarken aus der Nähe",
+                    regionalBeersSubtitle: "In Bad Kissingen und um Bad Kissingen gibt es gute Brauereien:",
+                    
+                    cultureTitle: "🌍 Bier in Deutschland",
+                    regionHeader: "Wo",
+                    specialtyHeader: "Was",
+                    factHeader: "Besonders",
+                    bavaria: "<strong>Bayern</strong>",
+                    bavariaSpecialty: "Weißbier",
+                    bavariaFact: "Oktoberfest",
+                    cologne: "<strong>Köln</strong>",
+                    cologneSpecialty: "Kölsch",
+                    cologneFact: "Kleine Gläser",
+                    north: "<strong>Norden</strong>",
+                    northSpecialty: "Pils",
+                    northFact: "Hopfen wächst da",
+                    east: "<strong>Osten</strong>",
+                    eastSpecialty: "Schwarzbier",
+                    eastFact: "Sehr dunkel",
+                    funFact: "Wusstest du?",
+                    funFactText: "In Deutschland gibt es über 1.500 Brauereien! Das sind sehr viele verschiedene Biermarken!",
+                    
+                    // Biermarken-Entstehung - Einfache Sprache
+                    brandCreationTitle: "Wie entstehen so viele Biermarken?",
+                    brandExplanationTitle: "🏭 So entstehen Biermarken:",
+                    brandExplanationText: "Eine Biermarke = <strong>Brauerei + Biersorte + wo es gemacht wird + besonderer Name</strong>",
+                    practicalExample: "💡 Das Ergebnis:",
+                    practicalExampleText: "Beide Brauereien machen <strong>die gleiche Art Bier</strong> (Pils). Aber weil sie verschiedene Namen haben und an verschiedenen Orten sind, gibt es <strong>zwei verschiedene Biermarken</strong>. So entstehen viele verschiedene Marken!",
+                    
+                    // Einfache Klassifizierung - Einfache Sprache
+                    simpleClassificationTitle: "Bier einfach erklärt",
+                    simpleClassificationSubtitle: "Bier kann man einfach nach 4 Sachen unterscheiden:",
+                    grainTypeTitle: "Getreide",
+                    grainTypeText: "Gerste, Weizen, Dinkel",
+                    colorTitle: "Farbe",
+                    colorText: "Hell, Dunkel, Schwarz",
+                    alcoholTitle: "Alkohol",
+                    alcoholText: "Wenig bis viel Alkohol",
+                    fermentationTitle: "Wie gemacht",
+                    fermentationText: "Oben oder unten vergoren",
+                    simpleClassificationTip: "💡 <strong>Wichtig:</strong> Mit diesen 4 Sachen kann man jedes Bier beschreiben!",
+                    
+                    // Schneller Bier-Guide für Profis - Einfache Sprache
+                    quickGuideTitle: "Bier Guide für Profis",
+                    shelfLifeTitle: "Wie lange haltbar",
+                    shelfLifeText: "Flaschenbier: 6-12 Monate<br>Fassbier: 3-6 Monate<br>Einmal offen: sofort trinken",
+                    storageTitle: "Richtig lagern",
+                    storageText: "Kühl lagern (6-8°C)<br>Dunkel<br>Flasche nach oben<br>Temperatur nicht ändern",
+                    servingTitle: "Richtig ausschenken",
+                    servingText: "Pils: 6-8°C<br>Weißbier: 8-10°C<br>Richtiges Glas<br>Schaum 2-3 cm",
+                    professionalTip: "💡 <strong>Wichtig:</strong> Richtig lagern und ausschenken ist sehr wichtig! Temperatur und sauber machen sind das Wichtigste.",
+                    
+                    // Schnelle Übersicht Tabelle - Einfache Sprache
+                    quickReferenceTitle: "Schnelle Übersicht für Schüler",
+                    tableHeaderBeer: "Bierart",
+                    tableHeaderAlcohol: "Alkohol",
+                    tableHeaderTemp: "Temperatur",
+                    tableHeaderTaste: "Geschmack",
+                    
+                    // Kunden & Events Sektion - Einfache Sprache
+                    customersEventsTitle: "👥 Unsere Kunden",
+                    customersEventsSubtitle: "In Bad Kissingen leben viele verschiedene Menschen. Wir beliefern sie alle:",
+                    customer1Title: "Krankenhaus",
+                    customer1Text: "Viele Menschen jeden Tag, auch Feste",
+                    customer2Title: "Büros & Firmen",
+                    customer2Text: "Mittagspause, Firmenfeiern, Meetings",
+                    customer3Title: "Schulen",
+                    customer3Text: "Junge Leute, Partys, Abschlussfeiern",
+                    customer4Title: "Hochzeiten & Feiern",
+                    customer4Text: "Alle Altersgruppen, besondere Tage",
+                    customer5Title: "Sportvereine",
+                    customer5Text: "Nach dem Sport, Vereinsfeste",
+                    customer6Title: "Stadtfeste",
+                    customer6Text: "Familien mit Kindern, Besucher",
+                    insightTitle: "💡 Was wir sehen:",
+                    insightText: "Bad Kissingen hat viele verschiedene Menschen. Manche sind nur kurz da, andere wohnen hier. Manche wollen gesunde Sachen, andere wollen leckere Sachen. Bei Festen sind Jung und Alt zusammen.",
+                    
+                    responsibilityTitle: "⚠️ Wichtig für uns",
+                    responsibilityText: "Wir verkaufen Bier nur an Menschen ab 16 Jahren. Bier hat Alkohol drin. Das kann gefährlich sein."
+                }
+            };
+
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const translatableElements = document.querySelectorAll('[data-translate]');
+            const translatablePlaceholders = document.querySelectorAll('[data-translate-placeholder]');
+
+
+            function translatePage(lang) {
+                translatableElements.forEach(element => {
+                    const key = element.dataset.translate;
+                    if (translations[lang] && translations[lang][key]) {
+                        // For paragraph elements that should render bullet points with line breaks
+                        if (element.tagName === 'P' && (key.startsWith('type') || key === 'regulationsSummary') && lang === 'de_simple') {
+                             element.innerHTML = translations[lang][key].replace(/\n/g, '<br>');
+                        } else {
+                            element.innerHTML = translations[lang][key];
+                        }
+                    } else if (translations.de[key]) { 
+                         element.innerHTML = translations.de[key];
+                    }
+                });
+                translatablePlaceholders.forEach(element => {
+                    const key = element.dataset.translatePlaceholder;
+                     if (translations[lang] && translations[lang][key]) {
+                        element.placeholder = translations[lang][key];
+                    } else if (translations.de[key]) { 
+                        element.placeholder = translations.de[key];
+                    }
+                });
+            }
+            
+            let currentLang = 'de';
+            const activeLangButton = document.querySelector('.lang-btn.active');
+            if (activeLangButton) {
+                currentLang = activeLangButton.dataset.lang;
+            }
+            translatePage(currentLang);
+
+
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    currentLang = this.dataset.lang; 
+                    
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    translatePage(currentLang);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
