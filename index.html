@@ -5,6 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Getränke Schmidt Bad Kissingen - Bierwissen & Sortiment</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const translations = {
+            de: {
+                biergattungenTitle: "Biergattungen",
+                biergattungenDesc: "Die Biergattung ist gesetzlich festgelegt und wird durch den Stammwürzegehalt (Stärke des Bieres) bestimmt. Hauptsächlich getrunken wird Vollbier, in geringem Maße auch Schankbier und Starkbier.",
+                biergattungenTableTitle: "Tabelle Biergattungen nach der Bierverordnung",
+                biergattungenTableCol1: "Bezeichnung der Biergattung",
+                biergattungenTableCol2: "zulässige Stammwürzebereiche",
+                biergattungenRow1: "Bier mit niedrigem Stammwürzegehalt",
+                biergattungenRow1Desc: "weniger als 7 % Stammwürze",
+                biergattungenRow2: "Schankbier",
+                biergattungenRow2Desc: "mind. 7,0, aber weniger als 11 % Stammwürze",
+                biergattungenRow3: "Vollbier",
+                biergattungenRow3Desc: "mind. 11,0, aber weniger als 16 % Stammwürze",
+                biergattungenRow4: "Starkbier",
+                biergattungenRow4Desc: "mind. 16,0 % Stammwürze",
+                biergattungenTip: "Als Faustregel gilt: Mehr Stammwürze bedeutet mehr »Potenzial« für Alkohol. Wie viel Alkohol tatsächlich im Glas landet, bestimmt der Brauprozess, Gärdauer, Hefestamm oder Entalkoholisierung. Es gibt auch alkoholfreie Biere mit viel Stammwürze."
+            },
+            de_simple: {
+                biergattungenTitle: "Biergattungen",
+                biergattungenDesc: "Die Biergattung zeigt, wie stark das Bier ist. Das hängt vom Stammwürzegehalt ab (Stärke des Bieres). Meistens trinken die Leute Vollbier. Es gibt auch Schankbier und Starkbier.",
+                biergattungenTableTitle: "Biergattungen nach Gesetz",
+                biergattungenTableCol1: "Biergattung",
+                biergattungenTableCol2: "Stammwürzegehalt",
+                biergattungenRow1: "Bier mit wenig Stammwürze",
+                biergattungenRow1Desc: "Weniger als 7 % Stammwürze",
+                biergattungenRow2: "Schankbier",
+                biergattungenRow2Desc: "Mindestens 7 %, aber weniger als 11 % Stammwürze",
+                biergattungenRow3: "Vollbier",
+                biergattungenRow3Desc: "Mindestens 11 %, aber weniger als 16 % Stammwürze",
+                biergattungenRow4: "Starkbier",
+                biergattungenRow4Desc: "Mindestens 16 % Stammwürze",
+                biergattungenTip: "Mehr Stammwürze heißt: mehr Alkohol möglich. Wie viel Alkohol wirklich drin ist, hängt vom Brauprozess ab. Es gibt auch alkoholfreie Biere mit viel Stammwürze. Stammwürze ist der Fachbegriff für die Stärke des Bieres."
+            }
+        };
+
+        function translatePage(lang) {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                } else if (translations.de[key]) {
+                    element.innerHTML = translations.de[key];
+                }
+            });
+        }
+
+        let currentLang = 'de';
+        const langButtons = document.querySelectorAll('.lang-btn');
+        if (document.querySelector('.lang-btn.active')) {
+            currentLang = document.querySelector('.lang-btn.active').getAttribute('data-lang');
+        }
+        translatePage(currentLang);
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                currentLang = this.getAttribute('data-lang');
+                langButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                translatePage(currentLang);
+            });
+        });
+    });
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -573,43 +638,41 @@
     <!-- SECTION 1: Biergattungen -->
     <div class="container">
         <div id="biergattungen" class="card">
-            <h2>Biergattungen</h2>
-            <p class="text-center mb-6" style="color: var(--text-medium); font-size: 1.1rem;">Die Biergattung ist gesetzlich festgelegt und wird durch den Stammwürzegehalt (Stärke des Bieres) bestimmt. Hauptsächlich getrunken wird Vollbier, in geringem Maße auch Schankbier und Starkbier.</p>
-            
-            <h3 style="color: var(--accent-green); margin-bottom: 16px;">Tabelle Biergattungen nach der Bierverordnung</h3>
+            <h2 data-translate="biergattungenTitle">Biergattungen</h2>
+            <p class="text-center mb-6" style="color: var(--text-medium); font-size: 1.1rem;" data-translate="biergattungenDesc">Die Biergattung ist gesetzlich festgelegt und wird durch den Stammwürzegehalt (Stärke des Bieres) bestimmt. Hauptsächlich getrunken wird Vollbier, in geringem Maße auch Schankbier und Starkbier.</p>
+            <h3 style="color: var(--accent-green); margin-bottom: 16px;" data-translate="biergattungenTableTitle">Tabelle Biergattungen nach der Bierverordnung</h3>
             <div style="overflow-x: auto;">
                 <table class="comparison-table" style="width: 100%; min-width: 600px;">
                     <thead>
                         <tr>
-                            <th>Bezeichnung der Biergattung</th>
-                            <th>zulässige Stammwürzebereiche</th>
+                            <th data-translate="biergattungenTableCol1">Bezeichnung der Biergattung</th>
+                            <th data-translate="biergattungenTableCol2">zulässige Stammwürzebereiche</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="font-weight: 600;">Bier mit niedrigem Stammwürzegehalt</td>
-                            <td>weniger als 7 % Stammwürze</td>
+                            <td style="font-weight: 600;" data-translate="biergattungenRow1">Bier mit niedrigem Stammwürzegehalt</td>
+                            <td data-translate="biergattungenRow1Desc">weniger als 7 % Stammwürze</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 600;">Schankbier</td>
-                            <td>mind. 7,0, aber weniger als 11 % Stammwürze</td>
+                            <td style="font-weight: 600;" data-translate="biergattungenRow2">Schankbier</td>
+                            <td data-translate="biergattungenRow2Desc">mind. 7,0, aber weniger als 11 % Stammwürze</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 600;">Vollbier</td>
-                            <td>mind. 11,0, aber weniger als 16 % Stammwürze</td>
+                            <td style="font-weight: 600;" data-translate="biergattungenRow3">Vollbier</td>
+                            <td data-translate="biergattungenRow3Desc">mind. 11,0, aber weniger als 16 % Stammwürze</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 600;">Starkbier</td>
-                            <td>mind. 16,0 % Stammwürze</td>
+                            <td style="font-weight: 600;" data-translate="biergattungenRow4">Starkbier</td>
+                            <td data-translate="biergattungenRow4Desc">mind. 16,0 % Stammwürze</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
             <!-- Student Tip Box -->
-            <div class="student-tip">
+            <div class="student-tip" data-translate="biergattungenTip">
                 Als Faustregel gilt: Mehr Stammwürze bedeutet mehr »Potenzial« für Alkohol. 
-                Wie viel Alkohol tatsächlich im Glas landet, bestimmt allerdings der Brauprozess, Gärdauer, Hefestamm oder nachträgliche Entalkoholisierung. Deshalb gibt es auch alkoholarme bzw. alkoholfreie Biere mit relativ hoher Stammwürze.
+                Wie viel Alkohol tatsächlich im Glas landet, bestimmt der Brauprozess, Gärdauer, Hefestamm oder Entalkoholisierung. Es gibt auch alkoholfreie Biere mit viel Stammwürze.
             </div>
         </div>
 
